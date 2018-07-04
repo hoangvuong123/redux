@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Todo component render Todo component 1`] = `
+<li
+  onClick={[Function]}
+  style={
+    Object {
+      "textDecoration": "line-through",
+    }
+  }
+>
+  todo 1
+</li>
+`;

@@ -1,22 +1,23 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+// @flow
 
-const Link = ({ active, children, onClick }) => (
-    <button
-       onClick={onClick}
-       disabled={active}
-       style={{
-           marginLeft: '4px',
-       }}
-    >
-      {children}
-    </button>
-)
+import * as React from 'react'
 
-Link.propTypes = {
-  active: PropTypes.bool.isRequired,
-  children: PropTypes.node.isRequired,
-  onClick: PropTypes.func.isRequired
+type LinkType = {
+  active: boolean,
+  children: React.Node,
+  onClick: Function
 }
+
+const Link = ({ active, children, onClick }: LinkType) => (
+  <button
+    onClick={onClick}
+    disabled={active}
+    style={{
+      marginLeft: '4px',
+    }}
+  >
+    {children}
+  </button>
+)
 
 export default Link

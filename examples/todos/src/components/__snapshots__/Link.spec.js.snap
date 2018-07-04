@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link component render Link component 1`] = `
+<button
+  disabled={undefined}
+  onClick={undefined}
+  style={
+    Object {
+      "marginLeft": "4px",
+    }
+  }
+/>
+`;

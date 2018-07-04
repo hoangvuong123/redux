@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react'
 import { render } from 'react-dom'
 import { createStore } from 'redux'
@@ -7,9 +9,16 @@ import rootReducer from './reducers'
 
 const store = createStore(rootReducer)
 
-render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root')
-)
+let rootElement =  document.getElementById('root')
+
+if (rootElement) {
+  render(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    rootElement
+  )
+} else {
+  throw Error('No Root element')
+}
+
