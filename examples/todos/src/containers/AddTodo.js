@@ -3,11 +3,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../actions'
+import type { Dispatch } from '../type'
 
 type Props = {
-  dispatch: (
-    action: typeof addTodo
-  ) => void
+  handleSubmit: (string) => void
 };
 
 type State = {
@@ -22,12 +21,11 @@ class AddTodo extends Component<Props, State> {
   handleChange = (event: SyntheticKeyboardEvent<HTMLInputElement>) => {
     this.setState({ value: event.currentTarget.value });
   };
+
   handleSubmit = (event: Event) => {
     event.preventDefault();
-    if (!this.state.value.trim()) {
-      return;
-    }
-    this.props.dispatch(addTodo(this.state.value));
+    if (!this.state.value.trim()) return;
+    this.props.handleSubmit(this.state.value);
     this.setState({ value: '' });
   };
 
@@ -45,4 +43,8 @@ class AddTodo extends Component<Props, State> {
   }
 }
 
-export default connect()(AddTodo)
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+  handleSubmit: (value) => dispatch(addTodo(value))
+})
+
+export default connect(null, mapDispatchToProps)(AddTodo)

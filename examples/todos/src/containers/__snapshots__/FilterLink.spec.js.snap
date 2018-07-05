@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FilterLink Change filter 1`] = `
+exports[`FilterLink Should change filter 1`] = `
 <Link
   active={false}
   filter="SHOW_ALL"
@@ -39,7 +39,7 @@ exports[`FilterLink Change filter 1`] = `
 />
 `;
 
-exports[`FilterLink renders FilterLink component 1`] = `
+exports[`FilterLink Should renders FilterLink component 1`] = `
 <Link
   active={false}
   filter="SHOW_ALL"

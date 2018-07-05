@@ -4,7 +4,7 @@ import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import FilterLink from './FilterLink';
 
-const setup = (setupProps = {}) => {
+const setup = () => {
   const store = configureStore()({});
   const wrapper = shallow(<FilterLink filter="SHOW_ALL" store={store} />);
 
@@ -15,12 +15,12 @@ const setup = (setupProps = {}) => {
 };
 
 describe('FilterLink', () => {
-  test('renders FilterLink component', () => {
+  test('Should renders FilterLink component', () => {
     const { wrapper } = setup();
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
-  test('Change filter', () => {
+  test('Should change filter', () => {
     const { wrapper, store } = setup();
     expect(toJson(wrapper)).toMatchSnapshot();
     wrapper.find('Link').simulate('click');

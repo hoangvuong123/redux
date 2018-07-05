@@ -1,16 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
 import Footer from './Footer';
 
-const setup = (setupProps = {}) => {
+const setup = () => {
   const wrapper = shallow(<Footer/>);
   return { wrapper };
 };
 
-describe('Link component', () => {
-  it('render Link component', () => {
+describe('Footer component', () => {
+  it('Should render Footer component', () => {
     const { wrapper } = setup();
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   })
 })

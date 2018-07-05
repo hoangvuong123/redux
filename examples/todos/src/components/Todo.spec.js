@@ -1,14 +1,30 @@
 import React from 'react'
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 import Todo from './Todo'
 
-describe('Todo component', () => {
-  it('render Todo component', () => {
-    let onClick = () => "onClick Function"
+const setup = (mockOnClick) => {
+  const wrapper = shallow(<Todo onClick={mockOnClick} completed={true} text="todo 1"/>);
+  return { wrapper };
+};
 
-    const todo = renderer.create(
-      <Todo onClick={onClick} completed={true} text="todo 1"/>
-    ).toJSON()
-    expect(todo).toMatchSnapshot();
+describe('Todo component', () => {
+  const mockOnClick = jest.fn();
+
+  it('Should render Todo component', () => {
+    const { wrapper } = setup(mockOnClick);
+    expect(wrapper).toMatchSnapshot();
+  })
+
+  it('Should call click event', () => {
+    const { wrapper } = setup(mockOnClick);
+    const todoComponenet = wrapper;
+
+    expect(todoComponenet.find('li').length).toBe(1);
+
+    todoComponenet.find('li').simulate('click');
+    expect(mockOnClick).toHaveBeenCalled();
+
+    todoComponenet.find('li').simulate('click');
+    expect(mockOnClick).toHaveBeenCalledTimes(2);
   })
 })

@@ -1,20 +1,25 @@
 import React from 'react'
-import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
 import TodoList from './TodoList'
 
-describe('TodoList component', () => {
-  it('render TodoList component', () => {
-      let todos= [{
-        id: 1,
-        completed: false,
-        text: 'todo 1'
-      },{
-        id: 2,
-        completed: true,
-        text: 'todo 2'
-      }]
+const setup = () => {
+  let todos= [{
+    id: 1,
+    completed: false,
+    text: 'todo 1'
+  },{
+    id: 2,
+    completed: true,
+    text: 'todo 2'
+  }]
 
-      const todoList = renderer.create(<TodoList todos={todos}/>).toJSON()
-      expect(todoList).toMatchSnapshot();
+  const wrapper = shallow(<TodoList todos={todos}/>);
+  return { wrapper };
+};
+
+describe('TodoList component', () => {
+  it('Should render TodoList component', () => {
+    const { wrapper } = setup();
+    expect(wrapper).toMatchSnapshot();
   })
 })

@@ -9,7 +9,7 @@ type TodoListType = {
     completed: boolean,
     text: string
   }>,
-  toggleTodo: Function
+  toggleTodo: (id: number) => void
 }
 
 const TodoList = ({ todos, toggleTodo }: TodoListType) => (

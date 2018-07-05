@@ -1,10 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
 import AddTodo from './AddTodo';
 import configureStore from 'redux-mock-store';
 
-const setup = (setupProps = {}) => {
+const setup = () => {
   const store = configureStore()({ todos: [] });
   const wrapper = shallow(<AddTodo store={store}/>);
 
@@ -12,9 +11,9 @@ const setup = (setupProps = {}) => {
 };
 
 describe('AddTodo component', () => {
-  it('render AddTodo component', () => {
+  it('Should render AddTodo component', () => {
     const { wrapper } = setup();
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   })
 
   it('handle Submit', () => {
@@ -22,7 +21,9 @@ describe('AddTodo component', () => {
     const fakeEvent = { preventDefault: () => 'preventDefault' };
     const addTodoComponent = wrapper.dive();
     const instance = addTodoComponent.instance();
-    instance.state.value = 'Add Todo'
+    instance.setState ({
+      value: 'Add Todo'
+    });
 
     expect(addTodoComponent.find('form').length).toBe(1);
     addTodoComponent.find('form').simulate('submit', fakeEvent);

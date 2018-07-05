@@ -3,7 +3,7 @@
 import React from 'react'
 
 type TodoType = {
-  onClick: Function,
+  onClick: () => void,
   completed: boolean,
   text: string
 }

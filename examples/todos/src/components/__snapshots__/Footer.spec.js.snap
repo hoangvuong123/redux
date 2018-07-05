@@ -1,24 +1,181 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Link component render Link component 1`] = `
-<div>
-  <span>
-    Show: 
-  </span>
-  <Connect(Link)
-    filter="SHOW_ALL"
-  >
-    All
-  </Connect(Link)>
-  <Connect(Link)
-    filter="SHOW_ACTIVE"
-  >
-    Active
-  </Connect(Link)>
-  <Connect(Link)
-    filter="SHOW_COMPLETED"
-  >
-    Completed
-  </Connect(Link)>
-</div>
+exports[`Footer component Should render Footer component 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Footer />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <span>
+          Show: 
+</span>,
+        <Connect(Link)
+          filter="SHOW_ALL"
+>
+          All
+</Connect(Link)>,
+        <Connect(Link)
+          filter="SHOW_ACTIVE"
+>
+          Active
+</Connect(Link)>,
+        <Connect(Link)
+          filter="SHOW_COMPLETED"
+>
+          Completed
+</Connect(Link)>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Show: ",
+        },
+        "ref": null,
+        "rendered": "Show: ",
+        "type": "span",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "All",
+          "filter": "SHOW_ALL",
+        },
+        "ref": null,
+        "rendered": "All",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "Active",
+          "filter": "SHOW_ACTIVE",
+        },
+        "ref": null,
+        "rendered": "Active",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "children": "Completed",
+          "filter": "SHOW_COMPLETED",
+        },
+        "ref": null,
+        "rendered": "Completed",
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <span>
+            Show: 
+</span>,
+          <Connect(Link)
+            filter="SHOW_ALL"
+>
+            All
+</Connect(Link)>,
+          <Connect(Link)
+            filter="SHOW_ACTIVE"
+>
+            Active
+</Connect(Link)>,
+          <Connect(Link)
+            filter="SHOW_COMPLETED"
+>
+            Completed
+</Connect(Link)>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Show: ",
+          },
+          "ref": null,
+          "rendered": "Show: ",
+          "type": "span",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "All",
+            "filter": "SHOW_ALL",
+          },
+          "ref": null,
+          "rendered": "All",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "Active",
+            "filter": "SHOW_ACTIVE",
+          },
+          "ref": null,
+          "rendered": "Active",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "Completed",
+            "filter": "SHOW_COMPLETED",
+          },
+          "ref": null,
+          "rendered": "Completed",
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
 `;

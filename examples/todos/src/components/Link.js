@@ -5,7 +5,7 @@ import * as React from 'react'
 type LinkType = {
   active: boolean,
   children: React.Node,
-  onClick: Function
+  onClick: () => void
 }
 
 const Link = ({ active, children, onClick }: LinkType) => (

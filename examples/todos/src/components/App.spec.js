@@ -1,16 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
 import App from './App';
 
-const setup = (setupProps = {}) => {
+const setup = () => {
   const wrapper = shallow(<App/>);
   return { wrapper };
 };
 
 describe('App component', () => {
-  it('render App component', () => {
+  it('Should render App component', () => {
     const { wrapper } = setup();
-    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper).toMatchSnapshot();
   })
 })
