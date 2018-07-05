@@ -24,6 +24,6 @@ describe('FilterLink', () => {
     const { wrapper, store } = setup();
     expect(toJson(wrapper)).toMatchSnapshot();
     wrapper.find('Link').simulate('click');
-    expect(store.getActions()[0].filter).toEqual('SHOW_ALL');
+    expect(store.getActions()[0].filter).toBe('SHOW_ALL');
   });
 })

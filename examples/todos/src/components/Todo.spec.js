@@ -17,14 +17,13 @@ describe('Todo component', () => {
 
   it('Should call click event', () => {
     const { wrapper } = setup(mockOnClick);
-    const todoComponenet = wrapper;
 
-    expect(todoComponenet.find('li').length).toBe(1);
+    expect(wrapper.find('li').length).toBe(1);
 
-    todoComponenet.find('li').simulate('click');
+    wrapper.find('li').simulate('click');
     expect(mockOnClick).toHaveBeenCalled();
 
-    todoComponenet.find('li').simulate('click');
+    wrapper.find('li').simulate('click');
     expect(mockOnClick).toHaveBeenCalledTimes(2);
   })
 })
